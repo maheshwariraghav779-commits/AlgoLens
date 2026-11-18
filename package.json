@@ -1,0 +1,20 @@
+{
+  "name": "algolens",
+  "version": "1.0.0",
+  "description": "Interactive File System and Directory Tree Explorer & DSA Analyser",
+  "type": "module",
+  "scripts": {
+    "dev": "node server.js",
+    "start": "node server.js",
+    "test": "node --test tests/*.test.js"
+  },
+  "keywords": [
+    "algorithm-visualizer",
+    "data-structures",
+    "file-system",
+    "tree-traversal",
+    "dsa"
+  ],
+  "author": "AlgoLens Team",
+  "license": "MIT"
+}

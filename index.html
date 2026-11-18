@@ -1,0 +1,627 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>AlgoLens – Complete University DSA & File System Explorer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/src/styles/index.css">
+  <style>
+    .unit-nav-wrap {
+      display: flex;
+      gap: 6px;
+      overflow-x: auto;
+      padding-bottom: 2px;
+      max-width: 100%;
+    }
+    .unit-nav-wrap::-webkit-scrollbar {
+      height: 4px;
+    }
+    .unit-nav-wrap::-webkit-scrollbar-thumb {
+      background: var(--line);
+      border-radius: 4px;
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <div class="brand" id="brand-home-btn" style="cursor:pointer" title="Return to Overview & Pipeline">
+      <h1>Algo<b>Lens</b></h1>
+      <span class="subtitle">DSA & System Architecture Visualizer</span>
+    </div>
+
+    <!-- Navigation Switcher: Landing Overview vs Interactive Workbench -->
+    <div class="top-nav-tabs">
+      <button class="top-nav-btn active" id="nav-btn-landing">
+        <span>🏠</span> <span>Overview & Pipeline</span>
+      </button>
+      <button class="top-nav-btn" id="nav-btn-workbench">
+        <span>🚀</span> <span>Visualizer Workbench</span>
+      </button>
+    </div>
+
+    <!-- Mode Switcher & Theme Button -->
+    <div class="header-actions">
+      <!-- Normal Animation vs Prediction Challenge (Blind Mode) -->
+      <div class="mode-toggle-group">
+        <button class="mode-toggle-btn active" id="mode-normal-btn" title="Fluid animations and full explanations">
+          🎓 Visual Animation
+        </button>
+        <button class="mode-toggle-btn" id="mode-predict-btn" title="Pause and predict the next algorithm step">
+          🧠 Predict Step (Blind Mode)
+        </button>
+      </div>
+
+      <button class="theme-btn" id="theme-toggle-btn" title="Toggle Theme" aria-label="Toggle Theme">
+        🌙 Dark
+      </button>
+    </div>
+  </header>
+
+  <!-- ==================== LANDING PAGE VIEW ==================== -->
+  <div id="landing-page-view" class="landing-wrap">
+    <!-- Hero Section -->
+    <section class="landing-hero">
+      <div class="hero-pill">
+        <span>⚡</span> <span>Next-Gen Algorithm & Memory Architecture Platform</span>
+      </div>
+      <h1 class="hero-title">
+        Interactive Data Structures, Algorithms<br>& System Memory Visualizer
+      </h1>
+      <p class="hero-sub">
+        AlgoLens bridges theoretical computer science, deterministic step-by-step state animations, low-level 64-bit RAM memory mapping, and active blind prediction challenges into a single cohesive platform.
+      </p>
+      <div class="hero-actions">
+        <button class="hero-btn primary" id="hero-launch-btn">
+          <span>🚀</span> <span>Launch Visualizer Workbench</span>
+        </button>
+        <button class="hero-btn secondary" id="hero-blind-btn">
+          <span>🎯</span> <span>Try Blind Prediction Mode</span>
+        </button>
+        <button class="hero-btn secondary" id="hero-fs-btn">
+          <span>📁</span> <span>Explore UNIX File System Tree</span>
+        </button>
+      </div>
+      <div class="hero-stats-ribbon">
+        <div class="hero-stat-item"><span>📚</span> <strong>7 Modules</strong> (Full Syllabus)</div>
+        <div class="hero-stat-item"><span>⚡</span> <strong>30+ Algorithms</strong> Animated</div>
+        <div class="hero-stat-item"><span>🧠</span> <strong>64-Bit Memory</strong> (Stack & Heap)</div>
+        <div class="hero-stat-item"><span>🎯</span> <strong>Blind Mode</strong> Active Recall</div>
+        <div class="hero-stat-item"><span>🤖</span> <strong>AI Tutor</strong> "Lens"</div>
+      </div>
+    </section>
+
+    <!-- Pipeline & System Architecture Section -->
+    <section class="pipeline-section">
+      <div class="section-header">
+        <div class="section-tag">System Architecture</div>
+        <h2 class="section-title">The AlgoLens Execution Pipeline</h2>
+        <p class="section-desc">
+          How AlgoLens transforms abstract data structures and algorithms into deterministic, verifiable, and multi-perspective learning experiences.
+        </p>
+      </div>
+
+      <div class="pipeline-cards-row">
+        <!-- Stage 1 -->
+        <div class="pipeline-card">
+          <div class="pipeline-step-num"><span>01</span> • Input Specification</div>
+          <div class="pipeline-card-title">Problem & Ingestion</div>
+          <div class="pipeline-card-desc">
+            Takes input arrays, 3-tuple sparse matrices, linked nodes, trees, or graphs with customizable constraints and automated random shuffle.
+          </div>
+          <span class="pipeline-badge">ADT & Invariant Inputs</span>
+        </div>
+
+        <!-- Stage 2 -->
+        <div class="pipeline-card">
+          <div class="pipeline-step-num"><span>02</span> • Deterministic Engine</div>
+          <div class="pipeline-card-title">Generator Stepper</div>
+          <div class="pipeline-card-desc">
+            Pre-computes atomic immutable step snapshots via ES6 generator functions. Enables zero-latency bidirectional scrubbing and instant state jumps.
+          </div>
+          <span class="pipeline-badge">yield { order, kind, meta }</span>
+        </div>
+
+        <!-- Stage 3 -->
+        <div class="pipeline-card">
+          <div class="pipeline-step-num"><span>03</span> • High-Level Visual Stage</div>
+          <div class="pipeline-card-title">Spring State Renderer</div>
+          <div class="pipeline-card-desc">
+            Renders dynamic CSS transforms with spring overshoot curves (cubic-bezier), distinct color semantics (orange compare, red swap, green sorted), and SVG trees.
+          </div>
+          <span class="pipeline-badge">Visual Stage + SVG Trees</span>
+        </div>
+
+        <!-- Stage 4 -->
+        <div class="pipeline-card">
+          <div class="pipeline-step-num"><span>04</span> • Low-Level Architecture</div>
+          <div class="pipeline-card-title">64-Bit Memory Inspector</div>
+          <div class="pipeline-card-desc">
+            Simulates physical RAM: activation records on the Call Stack (0x7FFF_EF40) and contiguous 4-byte chunk allocations on the Heap (0x10A4_B000).
+          </div>
+          <span class="pipeline-badge">Call Stack + Heap RAM</span>
+        </div>
+
+        <!-- Stage 5 -->
+        <div class="pipeline-card">
+          <div class="pipeline-step-num"><span>05</span> • Active Assessment</div>
+          <div class="pipeline-card-title">Blind Prediction & AI Tutor</div>
+          <div class="pipeline-card-desc">
+            Prompts learners to predict the next step transition with score & streak tracking, accompanied by always-available contextual tutor "Lens".
+          </div>
+          <span class="pipeline-badge">Predict Mode + AI Lens</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Curriculum Modules Section -->
+    <section class="modules-section">
+      <div class="section-header">
+        <div class="section-tag">University Curriculum</div>
+        <h2 class="section-title">Comprehensive Modules (1 to 7)</h2>
+        <p class="section-desc">
+          Click on any module below to jump directly into its interactive workbench with step-by-step animations and memory tracking.
+        </p>
+      </div>
+
+      <div class="modules-grid">
+        <!-- Module 1 -->
+        <div class="module-card">
+          <div class="module-card-header">
+            <div>
+              <div class="module-card-num">📊 Module 1</div>
+              <h3 class="module-card-title">Arrays, Searching & Sorting</h3>
+            </div>
+            <span class="pill purple">O(n log n)</span>
+          </div>
+          <p class="module-card-topics">
+            Covers 9 sorting algorithms (Bubble, Selection, Insertion, Merge, Quick, Heap, Radix, Shell, Bucket), 4 search strategies (Linear, Binary, Indexed, Fibonacci), 2D Address Mapping, and Sparse Matrix Fast/Simple Transpose.
+          </p>
+          <div class="module-pills-row">
+            <span class="module-topic-tag">Sorting (9 algorithms)</span>
+            <span class="module-topic-tag">Fibonacci Search</span>
+            <span class="module-topic-tag">Row/Col Major Addr</span>
+            <span class="module-topic-tag">Sparse Transpose</span>
+          </div>
+          <button class="module-launch-btn" data-unit="unit1">
+            <span>Explore Module 1</span> <span>→</span>
+          </button>
+        </div>
+
+        <!-- Module 2 -->
+        <div class="module-card">
+          <div class="module-card-header">
+            <div>
+              <div class="module-card-num">🔗 Module 2</div>
+              <h3 class="module-card-title">Linked Lists, DLL, CLL & GLL</h3>
+            </div>
+            <span class="pill orange">O(1) / O(N)</span>
+          </div>
+          <p class="module-card-topics">
+            Singly Linked List (SLL), Doubly Linked List (DLL with prev & next), Circular Linked List (CLL with tail-to-head loop), Generalized Linked List (GLL with atoms & sublists), In-place Reversal, and Vector Doubling.
+          </p>
+          <div class="module-pills-row">
+            <span class="module-topic-tag">SLL Insert/Delete</span>
+            <span class="module-topic-tag">DLL (prev ⇄ next)</span>
+            <span class="module-topic-tag">CLL (Tail ↺ Head)</span>
+            <span class="module-topic-tag">GLL (Atoms & Sublists)</span>
+            <span class="module-topic-tag">In-Place Reversal</span>
+            <span class="module-topic-tag">Vector Doubling</span>
+          </div>
+          <button class="module-launch-btn" data-unit="unit2">
+            <span>Explore Module 2</span> <span>→</span>
+          </button>
+        </div>
+
+        <!-- Module 3 -->
+        <div class="module-card">
+          <div class="module-card-header">
+            <div>
+              <div class="module-card-num">🥞 Module 3</div>
+              <h3 class="module-card-title">Stacks, Queues & Deque</h3>
+            </div>
+            <span class="pill purple">LIFO / FIFO</span>
+          </div>
+          <p class="module-card-topics">
+            Expression conversions (Infix to Postfix, Infix to Prefix), Stack Postfix evaluation, Circular Queue with modulo wraparound, Double Ended Queue (Deque with front & rear access), and Josephus elimination.
+          </p>
+          <div class="module-pills-row">
+            <span class="module-topic-tag">Infix to Postfix</span>
+            <span class="module-topic-tag">Infix to Prefix</span>
+            <span class="module-topic-tag">Postfix Eval</span>
+            <span class="module-topic-tag">Circular Queue</span>
+            <span class="module-topic-tag">Deque (Front ⇄ Rear)</span>
+            <span class="module-topic-tag">Josephus Problem</span>
+          </div>
+          <button class="module-launch-btn" data-unit="unit3">
+            <span>Explore Module 3</span> <span>→</span>
+          </button>
+        </div>
+
+        <!-- Module 4 -->
+        <div class="module-card">
+          <div class="module-card-header">
+            <div>
+              <div class="module-card-num">🌳 Module 4</div>
+              <h3 class="module-card-title">Trees & Binary Search Trees</h3>
+            </div>
+            <span class="pill orange">O(H) = O(log N)</span>
+          </div>
+          <p class="module-card-topics">
+            Binary Search Tree (BST) recursive insertion, 3-case deletion (leaf, single-child, two-children with in-order successor), and Threaded Binary Trees (TBT) with zero-stack pointer threading.
+          </p>
+          <div class="module-pills-row">
+            <span class="module-topic-tag">BST Insert</span>
+            <span class="module-topic-tag">BST Delete (3 Cases)</span>
+            <span class="module-topic-tag">Threaded Tree (TBT)</span>
+          </div>
+          <button class="module-launch-btn" data-unit="unit4">
+            <span>Explore Module 4</span> <span>→</span>
+          </button>
+        </div>
+
+        <!-- Module 5 -->
+        <div class="module-card">
+          <div class="module-card-header">
+            <div>
+              <div class="module-card-num">🕸️ Module 5</div>
+              <h3 class="module-card-title">Graphs & Minimum Spanning Trees</h3>
+            </div>
+            <span class="pill purple">O(E log V)</span>
+          </div>
+          <p class="module-card-topics">
+            Greedy single-source shortest paths via Dijkstra's algorithm, Kruskal's Minimum Spanning Tree with Disjoint Set Union (find/union), and BFS 2-coloring bipartite cycle detection.
+          </p>
+          <div class="module-pills-row">
+            <span class="module-topic-tag">Dijkstra Shortest Path</span>
+            <span class="module-topic-tag">Kruskal's MST</span>
+            <span class="module-topic-tag">Bipartite 2-Coloring</span>
+          </div>
+          <button class="module-launch-btn" data-unit="unit5">
+            <span>Explore Module 5</span> <span>→</span>
+          </button>
+        </div>
+
+        <!-- Module 6 -->
+        <div class="module-card">
+          <div class="module-card-header">
+            <div>
+              <div class="module-card-num">🗝️ Module 6</div>
+              <h3 class="module-card-title">Hashing & Collision Strategies</h3>
+            </div>
+            <span class="pill orange">O(1) Average</span>
+          </div>
+          <p class="module-card-topics">
+            Open addressing with Linear Probing (primary clustering analysis) and Quadratic Probing, closed addressing via Separate Chaining linked lists, and dynamic Extendible Hashing directory doubling.
+          </p>
+          <div class="module-pills-row">
+            <span class="module-topic-tag">Linear Probing</span>
+            <span class="module-topic-tag">Quadratic Probing</span>
+            <span class="module-topic-tag">Separate Chaining</span>
+            <span class="module-topic-tag">Extendible Hashing</span>
+          </div>
+          <button class="module-launch-btn" data-unit="unit6">
+            <span>Explore Module 6</span> <span>→</span>
+          </button>
+        </div>
+
+        <!-- Module 7 (File System Case Study) -->
+        <div class="module-card" style="grid-column: 1 / -1">
+          <div class="module-card-header">
+            <div>
+              <div class="module-card-num">📁 Module 7 • Flagship Case Study</div>
+              <h3 class="module-card-title">UNIX File System & Directory Tree Explorer</h3>
+            </div>
+            <span class="pill purple">Tree Data Structures in Operating Systems</span>
+          </div>
+          <p class="module-card-topics">
+            Interactive real-world application of tree hierarchies in UNIX OS: SVG tree diagram synchronized with a collapsible sidebar explorer, DFS Pre/In/Post traversals, BFS level-order, pathfinding, and recursive post-order folder size aggregation.
+          </p>
+          <div class="module-pills-row">
+            <span class="module-topic-tag">General Tree Diagram</span>
+            <span class="module-topic-tag">Collapsible Sidebar</span>
+            <span class="module-topic-tag">DFS Pre/In/Post</span>
+            <span class="module-topic-tag">BFS Level-Order</span>
+            <span class="module-topic-tag">Pathfinder</span>
+            <span class="module-topic-tag">Post-Order Disk Size</span>
+          </div>
+          <button class="module-launch-btn" data-unit="filesystem" style="background:var(--acc);color:#fff;border-color:var(--acc)">
+            <span>Explore Module 7: File System Explorer</span> <span>→</span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Key Platform Innovations -->
+    <section class="features-section">
+      <div class="section-header">
+        <div class="section-tag">Key Innovations</div>
+        <h2 class="section-title">Built for Real Conceptual Mastery</h2>
+      </div>
+
+      <div class="features-grid">
+        <div class="feature-box">
+          <div class="feature-icon">🧠</div>
+          <h4>64-Bit Memory Visualizer</h4>
+          <p>See exactly what happens inside low-level RAM: Call Stack activation frames, stack pointers ($SP, $BP$), and heap memory chunk byte offsets.</p>
+        </div>
+
+        <div class="feature-box">
+          <div class="feature-icon">🎯</div>
+          <h4>Blind Prediction Mode</h4>
+          <p>Active recall mode: pauses at state transitions and prompts you to predict the next operation, maintaining a live streak and score counter.</p>
+        </div>
+
+        <div class="feature-box">
+          <div class="feature-icon">📝</div>
+          <h4>3–4 Line Deep Explanations</h4>
+          <p>Every single step is deconstructed into: Operation, Algorithmic Invariant, Low-Level Memory State, and Next Transition Preview.</p>
+        </div>
+
+        <div class="feature-box">
+          <div class="feature-icon">🤖</div>
+          <h4>Always-Available AI Tutor "Lens"</h4>
+          <p>Ask doubts at any step. Lens is context-aware of the active algorithm, current step, pseudocode line, and RAM state.</p>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- ==================== WORKBENCH VIEW ==================== -->
+  <div id="workbench-view" style="display:none">
+    <!-- Syllabus Module Navigator Bar -->
+    <div id="unit-nav-bar" style="background:var(--card);border-bottom:1px solid var(--line);padding:8px 24px">
+      <div class="unit-nav-wrap" id="unit-switcher-nav"></div>
+    </div>
+
+    <!-- Main Grid Layout -->
+    <main>
+    <!-- Left Column: Visualizers + Shared Controls + Sub-Cards -->
+    <div>
+      <!-- Subtopic Tabs for the Active Unit -->
+      <div class="tabs" id="subtopic-tabs" style="margin-top:4px"></div>
+
+      <!-- PREDICTION CHALLENGE CARD (Active when in Blind / Prediction Mode) -->
+      <div id="prediction-card-wrap" style="display:none">
+        <div class="prediction-card">
+          <div class="prediction-header">
+            <div class="prediction-title">
+              <span>🎯 Blind Mode: Predict the Next Step</span>
+            </div>
+            <div class="score-badge">
+              <span>🔥 Streak: <span id="predict-streak" style="color:var(--swap)">0</span></span>
+              <span>⭐ Score: <span id="predict-score" style="color:var(--acc)">0 pts</span></span>
+            </div>
+          </div>
+          <div id="predict-question" style="font-size:14.5px;font-weight:600;margin-bottom:8px">
+            What will happen in the very next step?
+          </div>
+          <div class="prediction-options" id="predict-options-box"></div>
+          <div id="predict-feedback" style="display:none" class="prediction-feedback"></div>
+          <div style="display:flex;justify-content:flex-end;margin-top:10px">
+            <button class="btn sm p" id="predict-continue-btn" style="display:none">
+              ▶ Execute Next Step
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- MAIN ALGORITHM & DATA STRUCTURE CARD -->
+      <div id="dsa-view">
+        <div class="card">
+          <div class="card-header">
+            <div class="card-title">
+              <b id="active-algo-name">Bubble Sort</b>
+            </div>
+            <div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap">
+              <!-- Stage View Toggle: Algorithm Visual vs Memory RAM Visualizer -->
+              <div class="module-switcher">
+                <button class="module-btn active" id="view-stage-algo-btn">📊 Visual Stage</button>
+                <button class="module-btn" id="view-stage-memory-btn">🧠 RAM Memory (Stack & Heap)</button>
+              </div>
+
+              <div class="pills">
+                <span class="pill purple" id="active-tc">Time O(n²)</span>
+                <span class="pill orange" id="active-sc">Space O(1)</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Animated Dynamic Stage (Bars, Matrices, Linked Lists, Stacks, Trees, Graphs, Hashing) -->
+          <div id="stage">
+            <div id="dsa-stage" style="position:relative;width:100%;height:100%"></div>
+            <!-- Embedded Memory Inspector -->
+            <div id="memory-inspector" style="display:none;width:100%;height:100%;padding:14px;box-sizing:border-box;overflow:auto;background:var(--bg)">
+              <div class="memory-grid">
+                <!-- Call Stack Pane -->
+                <div class="memory-pane">
+                  <div class="memory-pane-title">
+                    <span>Call Stack (LIFO)</span>
+                    <span class="hex-addr">0x7FFF_EF40</span>
+                  </div>
+                  <div id="memory-stack-frames"></div>
+                </div>
+                <!-- Heap Allocation Pane -->
+                <div class="memory-pane">
+                  <div class="memory-pane-title">
+                    <span>Heap Memory Allocation</span>
+                    <span class="hex-addr">0x10A4_B000</span>
+                  </div>
+                  <div class="heap-canvas" id="memory-heap-chunks"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Analyser Strip & Live Counters -->
+          <div style="margin-top:14px">
+            <div class="card-header" style="margin-bottom:6px">
+              <div class="lbl" style="margin:0">📊 Analyser Strip & Performance Metrics</div>
+              <button class="btn sm p" id="compare-all-btn">⚡ Compare Sorting Algorithms</button>
+            </div>
+
+            <div class="analyser-strip">
+              <div class="analyser-stat">
+                <span class="analyser-stat-label">Comparisons</span>
+                <span class="analyser-stat-val" id="dsa-stat-cmp" style="color:var(--cmp)">0</span>
+              </div>
+              <div class="analyser-stat">
+                <span class="analyser-stat-label">Swaps / Moves</span>
+                <span class="analyser-stat-val" id="dsa-stat-swap" style="color:var(--swap)">0</span>
+              </div>
+              <div class="analyser-stat">
+                <span class="analyser-stat-label">Step / Total</span>
+                <span class="analyser-stat-val" id="dsa-stat-step" style="color:var(--acc)">0 / 0</span>
+              </div>
+              <div class="analyser-stat">
+                <span class="analyser-stat-label">Memory Layout</span>
+                <span class="analyser-stat-val" style="font-size:12.5px" id="dsa-stat-mem">Stack Frame + Heap Block</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- FILE SYSTEM & DIRECTORY TREE EXPLORER VIEW (Unit 4 / Case Study) -->
+      <div id="fs-view" style="display:none">
+        <div class="card">
+          <div class="card-header">
+            <div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap">
+              <b style="font-size:17px">📁 UNIX File System Tree Explorer</b>
+              <div class="module-switcher">
+                <button class="module-btn active fs-view-btn" data-view="general">General Tree</button>
+                <button class="module-btn fs-view-btn" data-view="binary" title="First-Child Next-Sibling representation">LCRS Binary Tree</button>
+                <button class="module-btn fs-view-btn" data-view="trie" title="Trie Path prefix lookup">Trie View</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Dual Synchronized Stage -->
+          <div class="fs-container">
+            <!-- Sidebar Tree Explorer -->
+            <div class="fs-sidebar" title="Drag & drop items to move between directories">
+              <div style="padding:4px 8px;font-size:11px;font-weight:700;color:var(--mute);text-transform:uppercase">
+                Hierarchy Explorer
+              </div>
+              <div id="fs-sidebar-nodes"></div>
+            </div>
+
+            <!-- SVG Tree Diagram -->
+            <div class="fs-tree-stage">
+              <svg id="fs-tree-svg" class="tree-svg"></svg>
+            </div>
+          </div>
+
+          <!-- Tree Structural Analysis Panel -->
+          <div class="analyser-strip" style="margin-top:14px">
+            <div class="analyser-stat">
+              <span class="analyser-stat-label">Total Files</span>
+              <span class="analyser-stat-val" id="fs-stat-files" style="color:var(--acc)">0</span>
+            </div>
+            <div class="analyser-stat">
+              <span class="analyser-stat-label">Directories</span>
+              <span class="analyser-stat-val" id="fs-stat-folders">0</span>
+            </div>
+            <div class="analyser-stat">
+              <span class="analyser-stat-label">Max Depth (H)</span>
+              <span class="analyser-stat-val" id="fs-stat-depth">0</span>
+            </div>
+            <div class="analyser-stat">
+              <span class="analyser-stat-label">Max Branching</span>
+              <span class="analyser-stat-val" id="fs-stat-branch">0</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- SHARED UNIVERSAL CONTROLS CARD -->
+      <div class="card" style="margin-top:16px">
+        <div class="ctrl">
+          <button class="btn" id="prev-btn" title="Step back (Left Arrow)">◀</button>
+          <button class="btn p" id="play-btn" title="Play / Pause (Space)">▶ Play</button>
+          <button class="btn" id="next-btn" title="Step forward (Right Arrow)">▶|</button>
+          <input type="range" id="scrub" min="0" value="0" aria-label="Step scrubber">
+          <label>Speed <input type="range" id="speed-slider" min="1" max="8" value="3"><span id="speed-val">3x</span></label>
+        </div>
+
+        <!-- Custom Array Input Controls (for DSA & Sorting) -->
+        <div class="ctrl" id="dsa-custom-inputs" style="margin-top:10px">
+          <input type="text" class="input-text" id="custom-arr-input" placeholder="e.g. 34, 12, 27, 8, 41, 19">
+          <button class="btn" id="use-array-btn">Use array</button>
+          <button class="btn" id="shuffle-arr-btn">🎲 Shuffle</button>
+        </div>
+      </div>
+
+      <!-- TWO SUB-CARDS: WHAT'S HAPPENING & PSEUDOCODE -->
+      <div class="grid2">
+        <div class="card">
+          <div class="lbl">What’s happening</div>
+          <div id="why">Ready. Step through with ▶| or press Play.</div>
+        </div>
+        <div class="card">
+          <div class="lbl">Pseudocode</div>
+          <div class="code" id="pseudocode-box"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Right Column: AI Tutor "Lens" (STICKY FULL HEIGHT) -->
+    <aside class="card" id="chat">
+      <div class="chat-header">
+        <div class="tutor-title">🤖 Lens, your doubt-solver</div>
+        <div class="tutor-sub">Covers your entire University Syllabus. Ask anything, anytime.</div>
+      </div>
+
+      <!-- Quick Question Chips -->
+      <div class="chips" id="tutor-chips"></div>
+
+      <!-- Message History List -->
+      <div id="tutor-msgs">
+        <div class="m a">Hi! I am Lens. I know which syllabus unit and step you’re on. Tap a question chip or ask any doubt!</div>
+      </div>
+
+      <!-- Question Input Form -->
+      <form id="tutor-form" onsubmit="return false">
+        <div id="q">
+          <input id="tutor-input" placeholder="Ask about this step, pointers, or memory…" autocomplete="off">
+          <button class="btn p" id="tutor-send-btn" type="submit" style="min-width:0">Ask</button>
+        </div>
+      </form>
+    </aside>
+  </main>
+  </div>
+
+  <!-- COMPARE ALGORITHMS MODAL -->
+  <div class="modal-overlay" id="compare-modal" style="display:none">
+    <div class="modal-content" onclick="event.stopPropagation()">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:16px">
+        <div>
+          <h2 style="margin:0;font-size:19px;font-weight:700">⚡ Sorting Algorithms Comparative Analysis</h2>
+          <div style="font-size:13px;color:var(--mute);margin-top:4px">
+            Comparing operations across algorithms on the same array.
+          </div>
+        </div>
+        <button class="btn sm" id="modal-close-btn">✕ Close</button>
+      </div>
+
+      <div style="display:flex;gap:16px;margin-bottom:14px;font-size:13px">
+        <div style="display:flex;align-items:center;gap:6px">
+          <span style="width:12px;height:12px;border-radius:3px;background:var(--cmp)"></span>
+          <span>Comparisons</span>
+        </div>
+        <div style="display:flex;align-items:center;gap:6px">
+          <span style="width:12px;height:12px;border-radius:3px;background:var(--swap)"></span>
+          <span>Swaps / Moves</span>
+        </div>
+      </div>
+
+      <div id="compare-chart-box"></div>
+    </div>
+  </div>
+
+  <script type="module" src="/src/app.js"></script>
+</body>
+</html>
